@@ -19,11 +19,17 @@ RUN mkdir $ELP_DIR \
     && chmod +rx $ELP_DIR/elp \
     && ln -s $ELP_DIR/elp /usr/local/bin
 
-RUN wget https://s3.amazonaws.com/rebar3/rebar3 -P /usr/local/rebar3 \
-    && chmod +rx /usr/local/rebar3/rebar3
-    && ln -s /usr/local/rebar3 
+ENV REBAR_DIR=/usr/local/rebar3
+RUN wget https://s3.amazonaws.com/rebar3/rebar3 -P $REBAR_DIR \
+    && chmod +rx $REBAR_DIR/rebar3 \
+    && ln -s $REBAR_DIR/rebar3 /usr/local/bin
 
 # install llama.cpp
+ENV LLAMA_VERSION=llama-b8393
+ENV LLAMA_DIR=/usr/local/llama.cpp
+RUN wget https://github.com/ggml-org/llama.cpp/releases/download/b8393/$LLAMA_VERSION-bin-ubuntu-x64.tar.gz -P $LLAMA_DIR \
+    && tar -xzf $LLAMA_DIR/$LLAMA_VERSION-bin-ubuntu-x64.tar.gz -C /usr/local/llama.cpp \
+    && export PATH=$PATH:$LLAMA_DIR/$LLAMA_VERSION
 # install rust
 # install rocq
 

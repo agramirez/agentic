@@ -8,3 +8,4 @@ services:
       dockerfile: dev.Dockerfile
     volumes:
       - ../:/workspace
+      - ../data/gguf:/usr/local/share/gguf
