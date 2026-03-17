@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  dev:
+    container_name: agentic-dev
+    build: 
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ../:/workspace
