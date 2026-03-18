@@ -1,9 +1,9 @@
 %%%-------------------------------------------------------------------
-%% @doc ollama top level supervisor.
+%% @doc llama top level supervisor.
 %% @end
 %%%-------------------------------------------------------------------
 
--module(ollama_sup).
+-module(llama_sup).
 
 -behaviour(supervisor).
 

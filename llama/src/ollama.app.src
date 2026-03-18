@@ -1,8 +1,8 @@
-{application, ollama, [
+{application, llama, [
     {description, "An OTP application"},
     {vsn, "0.1.0"},
     {registered, []},
-    {mod, {ollama_app, []}},
+    {mod, {llama_app, []}},
     {applications, [
         kernel,
         stdlib

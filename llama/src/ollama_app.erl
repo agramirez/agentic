@@ -1,16 +1,16 @@
 %%%-------------------------------------------------------------------
-%% @doc ollama public API
+%% @doc llama public API
 %% @end
 %%%-------------------------------------------------------------------
 
--module(ollama_app).
+-module(llama_app).
 
 -behaviour(application).
 
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
-    ollama_sup:start_link().
+    llama_sup:start_link().
 
 stop(_State) ->
     ok.

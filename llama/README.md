@@ -1,4 +1,4 @@
-ollama
+llama
 =====
 
 An OTP application that serves as a wrapper and gateway for the llama.cpp LLM inference agents.

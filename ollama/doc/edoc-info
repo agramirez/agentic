@@ -1,3 +1,0 @@
-%% encoding: UTF-8
-{application,ollama}.
-{modules,[ollama_app,ollama_sup]}.
