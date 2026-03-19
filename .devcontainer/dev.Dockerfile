@@ -28,9 +28,12 @@ RUN wget https://s3.amazonaws.com/rebar3/rebar3 -P $REBAR_DIR \
 ENV LLAMA_VERSION=llama-b8393
 ENV LLAMA_DIR=/usr/local/llama.cpp
 RUN wget https://github.com/ggml-org/llama.cpp/releases/download/b8393/$LLAMA_VERSION-bin-ubuntu-x64.tar.gz -P $LLAMA_DIR \
-    && tar -xzf $LLAMA_DIR/$LLAMA_VERSION-bin-ubuntu-x64.tar.gz -C /usr/local/llama.cpp \
-    && export PATH=$PATH:$LLAMA_DIR/$LLAMA_VERSION
+    && tar -xzf $LLAMA_DIR/$LLAMA_VERSION-bin-ubuntu-x64.tar.gz -C /usr/local/llama.cpp
+ENV PATH="$PATH:"$LLAMA_DIR/$LLAMA_VERSION
+
 # install rust
+RUN apt install -y build-essential rustup
+
 # install rocq
 
 RUN mkdir /workspace

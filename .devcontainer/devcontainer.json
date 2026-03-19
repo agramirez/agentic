@@ -19,6 +19,7 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"erlang-language-platform.erlang-language-platform"
+				,"rust-lang.rust-analyzer"
 				// "ms-dotnettools.csharp",
 				// "ms-mssql.mssql"
 			]
