@@ -4,8 +4,9 @@
 %%%-------------------------------------------------------------------
 
 -module(llama_app).
-
 -behaviour(application).
+
+-include_lib("kernel/include/logger.hrl").
 
 -export([start/2, stop/1]).
 
@@ -14,5 +15,3 @@ start(_StartType, _StartArgs) ->
 
 stop(_State) ->
     ok.
-
-%% internal functions
