@@ -6,6 +6,7 @@ RUN apt update && apt upgrade -y
 RUN apt install -y curl
 RUN apt install -y wget
 RUN apt install -y git
+RUN apt install -y libclang-dev clang
 
 # install erlang v27.3 and compatible elp version
 ARG ELP_VERSION=elp-linux-x86_64-unknown-linux-gnu-otp-27.3
