@@ -20,3 +20,5 @@ logs
 *.iml
 rebar3.crashdump
 *~
+
+target/

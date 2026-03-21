@@ -16,4 +16,5 @@ all() ->
 A test to access the llama-cli 
 """.
 llama_port_access(_Config) ->
+    aport:test(),
     ok.
