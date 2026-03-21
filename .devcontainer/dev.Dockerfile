@@ -32,6 +32,13 @@ RUN wget https://github.com/ggml-org/llama.cpp/releases/download/b8393/$LLAMA_VE
     && tar -xzf $LLAMA_DIR/$LLAMA_VERSION-bin-ubuntu-x64.tar.gz -C /usr/local/llama.cpp
 ENV PATH="$PATH:"$LLAMA_DIR/$LLAMA_VERSION
 
+# download tiny models
+ENV MODEL_DIR=/usr/local/share/gguf
+RUN wget https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF/resolve/main/smollm2-1.7b-instruct-q4_k_m.gguf -P $MODEL_DIR
+RUN wget https://huggingface.co/unsloth/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q3_K_M.gguf -P $MODEL_DIR
+RUN wget https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf -P $MODEL_DIR
+RUN wget https://huggingface.co/unsloth/gemma-3-1b-it-GGUF/resolve/main/gemma-3-1b-it-Q4_K_M.gguf -P $MODEL_DIR
+
 # install rust
 RUN apt install -y build-essential rustup
 
